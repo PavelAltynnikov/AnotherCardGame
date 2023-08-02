@@ -5,27 +5,29 @@
 // [x] Написать EnemyFactory
 // Написать Round
 // Написать Game
-// Написать Controller
+// [x] Написать Controller
 
+using AnotherCardGame;
 using AnotherCardGame.GameObjects;
 
 var cardsNames = GetCardsNames();
 var cardFactory = new CardFactory(cardsNames);
 
 var card = cardFactory.GetRandomItem();
-Console.WriteLine(card.Name);
-Console.WriteLine(card.Strength);
-Console.WriteLine(card.Elemental);
-Console.WriteLine(card.Alignment.Value);
+Console.WriteLine(card);
 
 var enemyNames = GetEnemyNames();
 var enemyFactory = new EnemyFactory(enemyNames);
 
 var enemy = enemyFactory.GetRandomItem();
-Console.WriteLine(enemy.Name);
-Console.WriteLine(enemy.Health);
-Console.WriteLine(enemy.Elemental);
-Console.WriteLine(enemy.Alignment.Value);
+Console.WriteLine(enemy);
+
+var controller = new IOController();
+Console.WriteLine(controller.AskUserToSelectMove());
+
+var randomCards = cardFactory.GetRandomItems(5).Cast<Card>().ToList();
+var selectedCard = controller.AskUserToSelectCard(randomCards);
+Console.WriteLine(selectedCard);
 
 List<string> GetCardsNames()
 {
