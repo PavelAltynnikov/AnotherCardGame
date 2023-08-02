@@ -16,4 +16,9 @@ public abstract class BattleObject
     public Elemental Elemental { get; }
 
     public Alignment Alignment { get; }
+
+    public override string ToString()
+    {
+        return $"{nameof(Name)}: {Name};\t{nameof(Elemental)}: {Elemental};\t{nameof(Alignment)}: {Alignment};";
+    }
 }

@@ -10,4 +10,9 @@ public class Enemy : BattleObject
     }
 
     public int Health { get; }
+
+    public override string ToString()
+    {
+        return $"{nameof(Enemy)}:\t{base.ToString()}\t{nameof(Health)}: {Health};";
+    }
 }

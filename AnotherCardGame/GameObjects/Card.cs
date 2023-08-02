@@ -10,4 +10,9 @@ public class Card : BattleObject
     }
 
     public int Strength { get; }
+
+    public override string ToString()
+    {
+        return $"{nameof(Card)}:\t{base.ToString()}\t{nameof(Strength)}: {Strength};";
+    }
 }

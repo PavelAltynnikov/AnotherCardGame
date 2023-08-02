@@ -13,4 +13,9 @@ public class Alignment
     public Ethics Ethics { get; }
 
     public int Value => (int)Moral * (int)Ethics;
+
+    public override string ToString()
+    {
+        return Value.ToString();
+    }
 }
